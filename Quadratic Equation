@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<math.h>
+int ENIGMA(float a,float b,float c)
+{ 
+    float d,x1,x2,k,j; 
+    d=(b*b)-(4*a*c); 
+    if(d>0)
+    { 
+        x1=(-b+sqrt(d))/(2*a); 
+        x2=(-b-sqrt(d))/(2*a); 
+        printf("x1= %f and x2= %f\n",x1,x2); 
+    } 
+    else if(d==0)
+    { 
+        x1=x2=-b/(2*a); 
+        printf("both roots are equal x1=x2= %f\n", x1); 
+    } 
+    else
+    {   k=-b/(2*a); 
+        j=sqrt(-d)/(2*a); 
+        printf("first root x1= %f+%fi and second root x2= %.2f-%.2fi\n",k,j,k,j); 
+    } 
+    return 0; 
+}
+int main()
+{ 
+    float a,b,c; 
+    printf("enter the coefficients of a,b and c\n"); 
+    scanf("%f%f%f",&a,&b,&c); 
+    printf("the quadratic equation is: %fx^2 + %fx + %f\n",a,b,c); 
+    ENIGMA(a,b,c); 
+    return 0; 
+}
