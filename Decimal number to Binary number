@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+    int arr[100],n,j,number;
+    printf("Enter a decimal number: ");
+    scanf("%d",&number);
+    for(j=0;number>0;j++)
+    {
+        arr[j]=number%2;
+        number=number/2;
+    }
+    for(j=j-1;j>=0;j--)
+    {
+        printf("%d",arr[j]);
+    }
+    return 0;
+}
