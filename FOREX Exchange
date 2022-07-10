@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int n,i;
+    float coin;
+    char arr[20];
+    printf("enter the number of customers: ");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("\nenter the currency name[quarters,dimes,nickels,pennies,USD]: ");
+        scanf("%s",&arr);
+        printf("enter the value: ");
+        scanf("%f",&coin);
+        if(strcmp(arr,"quarters")==0)
+        {
+            printf("The vaue of money in INR is=%.3f",coin*17.51);
+        }
+        else if(strcmp(arr,"dimes")==0)
+        {
+            printf("The vaue of money in INR is=%.10f",(coin/4002.84));
+        }
+        else if(strcmp(arr,"nickels")==0)
+        {
+            printf("The vaue of money in INR is=%.2f",coin*8.33);
+        }
+        else if(strcmp(arr,"pennies")==0)
+        {
+            printf("The vaue of money in INR is=%.2f",coin*0.6355);
+        }
+        else if(strcmp(arr,"USD")==0)
+        {
+            printf("The vaue of money in INR is=%.2f",coin*76.21);
+        }
+        else
+        {
+            printf("Currency not available");
+        }
+    }
+    return 0;
+}
