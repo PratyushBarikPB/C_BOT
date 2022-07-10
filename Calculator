@@ -1,0 +1,92 @@
+#include<stdio.h>
+int sum()
+{
+    int a,b;
+    printf("enter the first number: ");
+    scanf("%d",&a);
+    printf("enter the second number: ");
+    scanf("%d",&b);
+    int s1=0,s2=0,sum=0;
+    while(a!=0)
+    {
+        s1+=(a%10);
+        a= a/10;
+    }
+    while(b!=0)
+    {
+        s2+=(b%10);
+        b= b/10;
+    }
+    sum=s1+s2;
+    return sum;
+}
+
+int mul()
+{
+    int a,b;
+    printf("enter the first number: ");
+    scanf("%d",&a);
+    printf("enter the second number: ");
+    scanf("%d",&b);
+    int p1=1,p2=1,product=1;
+    while(a!=0)
+    {
+        p1*=(a%10);
+        a= a/10;
+    }
+    while(b!=0)
+    {
+        p2*=(b%10);
+        b= b/10;
+    }
+    product=p1*p2;
+    return product;
+}
+
+int rev()
+{
+    int i,rev=0,remainder;
+    printf("enter the number: ");
+    scanf("%d",&i);
+    while(i!=0)
+    {
+        remainder=i%10;
+        rev=rev*10+remainder;
+        i=i/10;
+    }
+    return rev;
+}
+int main()
+{
+    int c;
+    char d;
+    printf("enter the operation you want: ");
+    scanf("%c",&d);
+    switch(d)
+    {
+        case '+':
+        {
+            c=sum();
+            printf("sum: %d",c);
+            break;
+        }
+        case '*':
+        {
+            c=mul();
+            printf("product: %d",c);
+            break;
+        }
+        case '$':
+        {
+            c=rev();
+            printf("reverse: %d",c);
+            break;
+        }
+        default:
+        {
+            printf("wrong input");
+            break;
+        }
+    }
+    return 0;
+}
